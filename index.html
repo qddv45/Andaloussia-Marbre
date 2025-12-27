@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html class="dark" dir="ltr" lang="fr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Andaloussia Marbre - Granit de Luxe &amp; Occasion</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Spline+Sans:wght@300;400;500;600;700&amp;family=Playfair+Display:ital,wght@0,400;0,700;1,400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#30e87a",
+                        "accent-gold": "#5ea876", // Harmonized green replacing gold
+                        "accent-bronze": "#cd7f32",
+                        "background-light": "#f6f8f7",
+                        "background-dark": "#112117",
+                        "surface-dark": "#1c2620",
+                    },
+                    fontFamily: {
+                        "display": ["Spline Sans", "sans-serif"],
+                        "serif": ["Playfair Display", "serif"],
+                    },
+                    borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: "Spline Sans", sans-serif;
+        }
+        .font-serif {
+            font-family: "Playfair Display", serif;
+        }::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #112117; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #30e87a; 
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #25c968; 
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-[#111814] dark:text-white overflow-x-hidden min-h-screen flex flex-col">
+<header class="sticky top-0 z-50 w-full border-b border-[#29382f] bg-background-dark/80 backdrop-blur-md">
+    <div class="px-4 lg:px-40 flex justify-center py-3">
+        <div class="flex max-w-[1200px] flex-1 items-center justify-between">
+            <a href="index.html" class="flex items-center gap-4 text-white">
+                <div class="size-8 text-primary">
+                    <span class="material-symbols-outlined text-[32px]">diamond</span>
+                </div>
+                <h2 class="text-white text-xl lg:text-2xl font-bold font-serif tracking-wide">Andaloussia Marbre</h2>
+            </a>
+            <div id="nav-menu" class="hidden lg:flex flex-1 justify-end gap-8 items-center">
+                <nav class="flex items-center gap-8">
+                    <a class="text-white hover:text-primary transition-colors text-sm font-medium" href="index.html">Accueil</a>
+                    <a class="text-white hover:text-primary transition-colors text-sm font-medium" href="services.html">Services</a>
+                    <a class="text-white hover:text-primary transition-colors text-sm font-medium" href="galerie.html">Galerie</a>
+                    <a class="text-white hover:text-primary transition-colors text-sm font-medium" href="propos.html">À propos</a>
+                    <a class="text-white hover:text-primary transition-colors text-sm font-medium" href="contact.html">Contact</a>
+                </nav>
+                <a href="contact.html" class="flex cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-6 bg-primary hover:bg-primary/90 transition-colors text-background-dark text-sm font-bold tracking-wide">
+                    <span class="truncate">Demander un Devis</span>
+                </a>
+            </div>
+            <div id="mobile-menu" class="fixed inset-0 top-[70px] hidden z-50 lg:hidden border-b border-[#29382f]" style="background-color: #112117;">
+                <nav class="flex flex-col p-4 gap-4" style="background-color: #1c2620;">
+                    <a class="text-white hover:text-primary transition-colors text-base font-medium px-4 py-2" href="index.html">Accueil</a>
+                    <a class="text-white hover:text-primary transition-colors text-base font-medium px-4 py-2" href="services.html">Services</a>
+                    <a class="text-white hover:text-primary transition-colors text-base font-medium px-4 py-2" href="galerie.html">Galerie</a>
+                    <a class="text-white hover:text-primary transition-colors text-base font-medium px-4 py-2" href="propos.html">À propos</a>
+                    <a class="text-white hover:text-primary transition-colors text-base font-medium px-4 py-2" href="contact.html">Contact</a>
+                    <div class="border-t border-[#29382f] pt-4">
+                        <a href="contact.html" class="flex cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-6 bg-primary hover:bg-primary/90 transition-colors text-background-dark text-sm font-bold tracking-wide w-full">
+                            <span class="truncate">Demander un Devis</span>
+                        </a>
+                    </div>
+                </nav>
+            </div>
+            <button id="menu-btn" class="lg:hidden text-white p-2" aria-label="Open menu">
+                <span class="material-symbols-outlined">menu</span>
+            </button>
+        </div>
+    </div>
+</header>
+<div class="relative w-full min-h-[85vh] flex items-center justify-center bg-background-dark overflow-hidden">
+<div class="absolute inset-0 z-0">
+<img alt="Luxury dark marble texture with golden veins" class="w-full h-full object-cover opacity-60" data-alt="Close up of black marble texture with gold veins" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBBO-k-fg0uJKN590-adybAHxLUxpw1XKtmRaj9_appfzgi3AEgYvglNrQJrB_LoDPLxziL0Im6UmuBgWq_PjwXlhwVYtf3eoYgct1orFD9SaUOB3VyIZQVSP5ptOdAvZIgdkUvKVyQRoTHdVJA9QI-ZsqIlLe0fbfK8512CnBMuSf_avNKbwnRWvkKGGESjpxie9qi6RSLHFAyT5QMMGM_byJzxXUSmk5tAbA2jpBenJudQ_bNgkc3VABJb07NOkeh_E3-_hfNW0g"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background-dark via-background-dark/50 to-transparent"></div>
+</div>
+<div class="relative z-10 container mx-auto px-4 lg:px-40 text-center flex flex-col items-center gap-8">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-primary/30 bg-primary/10 backdrop-blur-sm">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+<span class="text-primary text-xs font-medium tracking-wider uppercase">L'excellence dans le détail</span>
+</div>
+<h1 class="text-white text-5xl md:text-7xl font-bold font-serif leading-tight max-w-5xl drop-shadow-lg">
+                La noblesse du Granit..<br/>
+<span class="text-transparent bg-clip-text bg-gradient-to-r from-white via-primary to-white">Une signature artistique</span>
+</h1>
+<p class="text-gray-300 text-lg md:text-xl max-w-3xl font-light leading-relaxed">
+                Découvrez notre collection exclusive de granit de luxe et d'occasion, où la robustesse de la nature rencontre la beauté du design andalou.
+            </p>
+<div class="flex flex-col sm:flex-row gap-4 mt-4">
+<a href="galerie.html" class="h-14 px-8 rounded-full bg-primary hover:bg-[#25c968] text-background-dark text-base font-bold transition-all transform hover:scale-105 shadow-[0_0_20px_rgba(48,232,122,0.3)] flex items-center justify-center">
+                    Voir la Galerie
+                </a>
+<a href="galerie.html" class="h-14 px-8 rounded-full border border-white/20 hover:bg-white/10 text-white text-base font-medium backdrop-blur-sm transition-all flex items-center gap-2 justify-center">
+<span>Nos Projets</span>
+<span class="material-symbols-outlined text-sm">arrow_right_alt</span>
+</a>
+</div>
+</div>
+</div>
+<section class="py-20 bg-background-dark border-b border-[#29382f]">
+<div class="container mx-auto px-4 lg:px-40">
+<div class="flex flex-col lg:flex-row gap-12 items-center">
+<div class="flex-1 space-y-6 text-left">
+<h3 class="text-primary font-bold tracking-widest text-sm uppercase">L'Art de la Pierre</h3>
+<h2 class="text-4xl md:text-5xl font-serif font-bold text-white leading-tight">
+                        Plus que de la pierre, <br/>
+<span class="text-accent-bronze">nous offrons des chefs-d'œuvre.</span>
+</h2>
+<p class="text-gray-400 text-lg leading-relaxed">
+                        Chez Andaloussia Marbre, nous croyons que chaque pièce de granit raconte une histoire. Des carrières internationales jusqu'à votre intérieur, nous garantissons une qualité exceptionnelle et des designs qui traversent le temps. Que vous recherchiez le luxe absolu ou des solutions économiques intelligentes, vous trouverez votre bonheur ici.
+                    </p>
+<div class="pt-4 flex gap-8 border-t border-[#29382f] mt-8">
+<div>
+<p class="text-3xl font-bold text-white font-serif">15+</p>
+<p class="text-sm text-gray-500">Ans d'expérience</p>
+</div>
+<div>
+<p class="text-3xl font-bold text-white font-serif">500+</p>
+<p class="text-sm text-gray-500">Projets réussis</p>
+</div>
+<div>
+<p class="text-3xl font-bold text-white font-serif">100%</p>
+<p class="text-sm text-gray-500">Qualité garantie</p>
+</div>
+</div>
+</div>
+<div class="flex-1 relative">
+<div class="aspect-square rounded-full overflow-hidden border-2 border-[#29382f] p-2">
+<div class="w-full h-full rounded-full overflow-hidden relative">
+<img alt="Elegant rounded staircase made of marble" class="w-full h-full object-cover hover:scale-110 transition-transform duration-700" data-alt="Spiral marble staircase view from above" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDzRbCrR7bx7I_YuMH9Fn0FDgPZD7JCm0Es-1Jienc-Q7v8221YZgx7crMWXzxUEBTHFogGZ7v4sUO95L5f53VQyhlUeEJB9eFaSXvjcJw9431HZ-Ab-awZ3w0kZwoueV3HtvFY2trq7XoSopWJtpz3SUIEHr7P_SByThoO1KexrX0X1ETDN_E3Ol1uJ2TO4vxupFZfNKZXzrQkmrB03jdjo0SX2Zr-OC5LkEvTbM2k5XQK12kg9POax1MUGXVNpSuqkLytcUSyG-U"/>
+</div>
+</div>
+<div class="absolute -bottom-6 -right-6 w-32 h-32 bg-gradient-to-br from-primary/20 to-transparent rounded-full blur-2xl"></div>
+</div>
+</div>
+</div>
+</section>
+<section class="py-24 bg-[#0d1410]" id="collection">
+<div class="container mx-auto px-4 lg:px-40">
+<div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
+<div>
+<h2 class="text-3xl md:text-4xl font-serif font-bold text-white mb-2">Notre Sélection</h2>
+<p class="text-gray-400">Découvrez nos derniers arrivages de granit de luxe et d'occasion</p>
+</div>
+<a class="text-primary hover:text-white transition-colors flex items-center gap-2 text-sm font-bold" href="#">
+                    Voir tous les produits
+                    <span class="material-symbols-outlined text-lg">arrow_right_alt</span>
+</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-4 auto-rows-[300px]">
+<div class="group relative md:col-span-2 rounded-xl overflow-hidden cursor-pointer">
+<img alt="Large slab of luxury white granite" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="Wide shot of luxurious white granite slab surface" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDv8x-xpnurXj5-fxsQsXEyNSB9_O_U44LEAc1ZI2UlICWSiQDdMvUQPSIuX9PNOoni-KdKxRY8MvzrHQ9uGUIMkoVfzSFff7YlmcB7OKE3imrhrUsMDjXtr0DKnFmF9X-34M9raVzUulOhJNhasNMETIXIr-4NlJ98z3qipHHv-5ksFX3RWIcPq85av962xdNAvnK0YCqUZZMccHObqSAT0IcoPqs4asBfwNndbXbB-XevYGJOU_fHa7h1ZDzoAT1VyJH7G1crzII"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-90"></div>
+<div class="absolute bottom-0 left-0 p-8 w-full">
+<div class="flex justify-between items-end">
+<div>
+<span class="text-primary text-xs font-bold uppercase tracking-wider mb-2 block">Best-seller</span>
+<h3 class="text-white text-2xl font-bold font-serif">Granit de Luxe</h3>
+<p class="text-gray-300 text-sm mt-1 max-w-md line-clamp-2">Une vaste sélection de granit importé avec des finitions sophistiquées pour palais et villas.</p>
+</div>
+<div class="bg-white/10 p-2 rounded-full backdrop-blur-sm group-hover:bg-primary group-hover:text-black transition-colors text-white">
+<span class="material-symbols-outlined block">arrow_outward</span>
+</div>
+</div>
+</div>
+</div>
+<div class="group relative md:row-span-2 rounded-xl overflow-hidden cursor-pointer">
+<img alt="Close up detail of staircase edge" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="Vertical shot of marble stair details" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBTsldSDPqWj_1WlkZAcUnWsTndEZvUAdJ2qoLPYBmtRxT5bifli_oMMMBK1RX3YOzkMBY6fE0CdFJ1JnZiHPHu2bCcDG7QvOvhoIn_6HRI1oe7trSBYuY-pvuA2w02knVQiDpShuJOd1vHirwVn-iWHGBGX-OGgbeTsjnD_ud8GUoD53HkQoQ02s_l3BaT2IDucCIOasvqAMu7KpnUAUZAdPPVKReHWtiYytEYI-ThmwKv84c77lgLPKTMdJ5Mire36FT4Xz18LRY"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-90"></div>
+<div class="absolute bottom-0 left-0 p-8 w-full">
+<h3 class="text-white text-2xl font-bold font-serif">Escaliers &amp; Rotondes</h3>
+<p class="text-gray-300 text-sm mt-1">Découpe et façonnage professionnels pour escaliers circulaires.</p>
+<div class="mt-4 flex gap-2">
+<span class="text-xs border border-white/20 px-2 py-1 rounded text-gray-300">Découpe Laser</span>
+<span class="text-xs border border-white/20 px-2 py-1 rounded text-gray-300">Sur Mesure</span>
+</div>
+</div>
+</div>
+<div class="group relative rounded-xl overflow-hidden cursor-pointer bg-surface-dark border border-[#29382f]">
+<div class="absolute inset-0 flex flex-col items-center justify-center p-6 text-center z-10">
+<span class="material-symbols-outlined text-4xl text-accent-bronze mb-3">recycling</span>
+<h3 class="text-white text-xl font-bold font-serif">Granit d'Occasion</h3>
+<p class="text-gray-400 text-sm mt-2">Un choix économique et écologique de qualité supérieure.</p>
+<button class="mt-4 text-primary text-sm font-bold hover:underline">Voir le stock</button>
+</div>
+<div class="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]"></div>
+</div>
+<div class="group relative rounded-xl overflow-hidden cursor-pointer" id="used">
+<img alt="Dark textured granite kitchen countertop" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="Dark kitchen countertop surface close up" src="https://lh3.googleusercontent.com/aida-public/AB6AXuABzQwNwNCrawn8Ytc0h2UXhoBjb_39kN3ntzmcC3PQURj3gFhsaSIGfSJzy26UR4zaVxiye-DZUgLctfiIahyXAuD6MIXgAq3K85OLOEjYFR0LKJVcXkPWIIYq86LAk72PBhwYnB3riL90gy--N1_yQTT25NJ6I-QMI8AWZXikgSaB0ghVDBrpNOFByIOP-e7AJvd0KVFT9XW9znfXccEviBQ-S7SLkJHAXmw_nsbyVDG7E3w3KNPLj8he-2LutnPv1SbwVKr6jnE"/>
+<div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors"></div>
+<div class="absolute bottom-6 left-6">
+<h3 class="text-white text-xl font-bold">Cuisines Modernes</h3>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="py-20 bg-background-dark relative overflow-hidden">
+<div class="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-[#29382f] to-transparent"></div>
+<div class="container mx-auto px-4 lg:px-40 relative z-10">
+<div class="text-center mb-16">
+<h2 class="text-3xl md:text-4xl font-serif font-bold text-white mb-4">Pourquoi choisir Andaloussia ?</h2>
+<p class="text-gray-400 max-w-2xl mx-auto">Nous allions expertise artisanale et technologie moderne pour vous offrir le meilleur.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<div class="p-8 rounded-2xl bg-surface-dark border border-[#29382f] hover:border-primary/50 transition-colors group">
+<div class="w-14 h-14 rounded-full bg-[#29382f] flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-background-dark transition-colors text-primary">
+<span class="material-symbols-outlined text-3xl">diamond</span>
+</div>
+<h3 class="text-xl font-bold text-white mb-3">Qualité Exceptionnelle</h3>
+<p class="text-gray-400 text-sm leading-relaxed">
+                        Nous sélectionnons rigoureusement les meilleurs blocs de granit brut des carrières les plus réputées pour garantir durabilité et esthétique.
+                    </p>
+</div>
+<div class="p-8 rounded-2xl bg-surface-dark border border-[#29382f] hover:border-primary/50 transition-colors group">
+<div class="w-14 h-14 rounded-full bg-[#29382f] flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-background-dark transition-colors text-primary">
+<span class="material-symbols-outlined text-3xl">brush</span>
+</div>
+<h3 class="text-xl font-bold text-white mb-3">Designs Artistiques</h3>
+<p class="text-gray-400 text-sm leading-relaxed">
+                        Notre équipe d'artisans maîtrise l'art de la coupe et du façonnage de la pierre pour épouser les détails architecturaux les plus complexes.
+                    </p>
+</div>
+<div class="p-8 rounded-2xl bg-surface-dark border border-[#29382f] hover:border-primary/50 transition-colors group">
+<div class="w-14 h-14 rounded-full bg-[#29382f] flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-background-dark transition-colors text-primary">
+<span class="material-symbols-outlined text-3xl">savings</span>
+</div>
+<h3 class="text-xl font-bold text-white mb-3">Prix Compétitifs</h3>
+<p class="text-gray-400 text-sm leading-relaxed">
+                        Nous proposons des options variées pour tous les budgets, des pièces de luxe rares aux produits d'occasion en excellent état.
+                    </p>
+</div>
+</div>
+</div>
+</section>
+<section class="py-16">
+<div class="container mx-auto px-4 lg:px-40">
+<div class="relative rounded-3xl overflow-hidden bg-primary p-10 md:p-16 flex flex-col md:flex-row items-center justify-between gap-8">
+<div class="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/diagmonds-light.png')] mix-blend-multiply"></div>
+<div class="absolute -right-20 -top-20 w-64 h-64 bg-white/20 rounded-full blur-3xl"></div>
+<div class="relative z-10 max-w-lg text-center md:text-left">
+<h2 class="text-3xl md:text-4xl font-black text-[#111814] mb-4">Prêt à transformer votre intérieur ?</h2>
+<p class="text-[#111814]/80 text-lg font-medium">Obtenez une consultation gratuite et un devis personnalisé pour votre projet dès aujourd'hui.</p>
+</div>
+<div class="relative z-10 flex gap-4">
+<a href="contact.html" class="bg-[#111814] text-white px-8 py-4 rounded-full font-bold hover:shadow-lg hover:scale-105 transition-all flex items-center gap-2">
+<span class="material-symbols-outlined">call</span>
+                    Contactez-nous
+                </a>
+</div>
+</div>
+</div>
+</section>
+<footer class="bg-[#0b120e] pt-20 pb-10 border-t border-[#29382f]">
+<div class="container mx-auto px-4 lg:px-40">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+<div class="col-span-1 md:col-span-2">
+<div class="flex items-center gap-3 text-white mb-6">
+<span class="material-symbols-outlined text-primary text-3xl">diamond</span>
+<h2 class="text-2xl font-bold font-serif">Andaloussia Marbre</h2>
+</div>
+<p class="text-gray-400 max-w-sm leading-relaxed mb-6">
+                        Votre destination première pour le granit et le marbre de luxe. Nous allions authenticité artisanale et précision d'exécution pour créer la beauté dans chaque angle.
+                    </p>
+<div class="flex gap-4">
+<a class="w-10 h-10 rounded-full bg-[#1c2620] flex items-center justify-center text-white hover:bg-primary hover:text-black transition-colors" href="#">
+<span class="font-bold">f</span>
+</a>
+<a class="w-10 h-10 rounded-full bg-[#1c2620] flex items-center justify-center text-white hover:bg-primary hover:text-black transition-colors" href="#">
+<span class="font-bold">ig</span>
+</a>
+<a class="w-10 h-10 rounded-full bg-[#1c2620] flex items-center justify-center text-white hover:bg-primary hover:text-black transition-colors" href="#">
+<span class="font-bold">wa</span>
+</a>
+</div>
+</div>
+<div>
+<h3 class="text-white font-bold mb-6 text-lg">Liens Rapides</h3>
+<ul class="space-y-4">
+<li><a class="text-gray-400 hover:text-primary transition-colors" href="index.html">Accueil</a></li>
+<li><a class="text-gray-400 hover:text-primary transition-colors" href="propos.html">À Propos</a></li>
+<li><a class="text-gray-400 hover:text-primary transition-colors" href="galerie.html">Galerie</a></li>
+<li><a class="text-gray-400 hover:text-primary transition-colors" href="contact.html">Demander un devis</a></li>
+</ul>
+</div>
+<div>
+<h3 class="text-white font-bold mb-6 text-lg">Contact</h3>
+<ul class="space-y-4">
+<li class="flex items-start gap-3 text-gray-400">
+<span class="material-symbols-outlined text-primary mt-1">location_on</span>
+<span>Zone Industrielle,<br/>Rue des Artisans, Bâtiment 45</span>
+</li>
+<li class="flex items-center gap-3 text-gray-400">
+<span class="material-symbols-outlined text-primary">phone_in_talk</span>
+<span dir="ltr">+212 600 000 000</span>
+</li>
+<li class="flex items-center gap-3 text-gray-400">
+<span class="material-symbols-outlined text-primary">mail</span>
+<span>info@andaloussia.ma</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="border-t border-[#29382f] pt-8 text-center text-gray-500 text-sm flex flex-col md:flex-row justify-between items-center gap-4">
+<p>© 2023 Andaloussia Marbre. Tous droits réservés.</p>
+<div class="flex gap-6">
+<a class="hover:text-white transition-colors" href="#">Politique de Confidentialité</a>
+<a class="hover:text-white transition-colors" href="#">Conditions d'Utilisation</a>
+</div>
+</div>
+</div>
+</footer>
+<script>
+const menuBtn = document.getElementById('menu-btn');
+const mobileMenu = document.getElementById('mobile-menu');
+const navLinks = mobileMenu.querySelectorAll('a');
+const body = document.body;
+
+menuBtn.addEventListener('click', () => {
+  mobileMenu.classList.toggle('hidden');
+  if (mobileMenu.classList.contains('hidden')) {
+    body.style.overflow = 'auto';
+  } else {
+    body.style.overflow = 'hidden';
+  }
+});
+
+navLinks.forEach(link => {
+  link.addEventListener('click', () => {
+    mobileMenu.classList.add('hidden');
+    body.style.overflow = 'auto';
+  });
+});
+</script>
+</script>
+</body></html>

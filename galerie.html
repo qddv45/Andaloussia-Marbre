@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html class="dark" dir="ltr" lang="fr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Galerie - Andaloussia Marbre</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Spline+Sans:wght@300;400;500;600;700&amp;family=Noto+Sans+Arabic:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#30e87a",
+                        "background-light": "#f6f8f7",
+                        "background-dark": "#112117",
+                        "surface-dark": "#1a2c22",
+                        "accent-bronze": "#a89f91",
+                    },
+                    fontFamily: {
+                        "display": ["Spline Sans", "Noto Sans Arabic", "sans-serif"],
+                        "body": ["Spline Sans", "Noto Sans Arabic", "sans-serif"],
+                    },
+                    borderRadius: {
+                        "DEFAULT": "1rem", 
+                        "lg": "1.5rem", 
+                        "xl": "2rem", 
+                        "2xl": "3rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #112117; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #29382f; 
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #30e87a; 
+        }
+        .masonry-grid {
+            column-count: 1;
+            column-gap: 1.5rem;
+        }
+        @media (min-width: 640px) {
+            .masonry-grid {
+                column-count: 2;
+            }
+        }
+        @media (min-width: 1024px) {
+            .masonry-grid {
+                column-count: 3;
+            }
+        }
+        .masonry-item {
+            break-inside: avoid;
+            margin-bottom: 1.5rem;
+        }.text-metallic {
+            background: linear-gradient(to bottom right, #e2e8e4, #a89f91);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark min-h-screen flex flex-col font-display overflow-x-hidden selection:bg-primary selection:text-background-dark">
+<header class="sticky top-0 z-50 w-full backdrop-blur-md bg-background-dark/80 border-b border-[#29382f]">
+    <div class="px-4 md:px-10 lg:px-20 py-4">
+        <div class="max-w-7xl mx-auto flex items-center justify-between gap-6">
+            <a class="flex items-center gap-3 text-white group" href="index.html">
+                <div class="size-10 bg-primary/10 rounded-xl flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-background-dark transition-colors duration-300">
+                    <span class="material-symbols-outlined">diamond</span>
+                </div>
+                <h1 class="text-white text-xl font-bold tracking-tight hidden sm:block">andaloussia<span class="text-primary">marbre</span></h1>
+            </a>
+            <div class="hidden md:flex flex-1 max-w-md mx-4">
+                <label class="relative w-full group">
+                    <div class="absolute inset-y-0 left-0 flex items-center pl-4 pointer-events-none text-[#9db8a8] group-focus-within:text-primary transition-colors">
+                        <span class="material-symbols-outlined">search</span>
+                    </div>
+                    <input class="w-full h-12 bg-[#29382f] border border-transparent focus:border-primary/50 text-white rounded-full pl-12 pr-4 placeholder-[#9db8a8] focus:ring-0 focus:outline-none transition-all" placeholder="Rechercher un type de granit, couleur..." type="text" value=""/>
+                </label>
+            </div>
+            <div class="flex items-center gap-6">
+                <nav class="hidden lg:flex items-center gap-8">
+                    <a class="text-[#9db8a8] hover:text-white text-sm font-medium transition-colors" href="index.html">Accueil</a>
+                    <a class="text-white text-sm font-bold relative after:content-[''] after:absolute after:-bottom-2 after:left-0 after:w-full after:h-0.5 after:bg-primary" href="galerie.html">Galerie</a>
+                    <a class="text-[#9db8a8] hover:text-white text-sm font-medium transition-colors" href="services.html">Services</a>
+                    <a class="text-[#9db8a8] hover:text-white text-sm font-medium transition-colors" href="contact.html">Contact</a>
+                </nav>
+                <a href="contact.html" class="bg-primary hover:bg-[#25b560] text-background-dark h-10 px-6 rounded-full text-sm font-bold transition-transform active:scale-95 hidden sm:flex items-center gap-2">
+                    <span>Demander un devis</span>
+                    <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+                </a>
+                <button id="menu-btn" class="lg:hidden text-white p-2" aria-label="Open menu">
+                    <span class="material-symbols-outlined">menu</span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <div id="mobile-menu" class="fixed inset-0 top-[70px] hidden z-50 lg:hidden border-b border-[#29382f]" style="background-color: #112117;">
+        <nav class="flex flex-col p-4 gap-4" style="background-color: #1c2620;">
+            <a class="text-white hover:text-primary transition-colors text-base font-medium px-4 py-2" href="index.html">Accueil</a>
+            <a class="text-white hover:text-primary transition-colors text-base font-medium px-4 py-2" href="services.html">Services</a>
+            <a class="text-primary text-base font-medium px-4 py-2" href="galerie.html">Galerie</a>
+            <a class="text-white hover:text-primary transition-colors text-base font-medium px-4 py-2" href="contact.html">Contact</a>
+            <div class="border-t border-[#29382f] pt-4">
+                <a href="contact.html" class="flex cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-6 bg-primary hover:bg-primary/90 transition-colors text-background-dark text-sm font-bold tracking-wide w-full">
+                    <span class="truncate">Demander un devis</span>
+                </a>
+            </div>
+        </nav>
+    </div>
+</header>
+</header>
+<main class="flex-1 w-full px-4 md:px-10 lg:px-20 py-8 md:py-12">
+<div class="max-w-7xl mx-auto flex flex-col gap-10">
+<section class="flex flex-col md:flex-row justify-between items-start md:items-end gap-6 pb-6 border-b border-[#29382f]">
+<div class="flex flex-col gap-4 max-w-2xl">
+<h2 class="text-4xl md:text-5xl font-black text-white leading-tight">Galerie de <span class="text-metallic">Granit</span></h2>
+<p class="text-[#9db8a8] text-lg leading-relaxed">
+                        Découvrez notre collection exclusive de granit de luxe et d'occasion. Des détails précis et une haute qualité qui reflètent le luxe de la nature dans votre maison.
+                    </p>
+</div>
+<div class="flex gap-4">
+<div class="flex flex-col items-center">
+<span class="text-primary font-bold text-2xl">150+</span>
+<span class="text-[#9db8a8] text-xs">produits disponibles</span>
+</div>
+<div class="w-px h-12 bg-[#29382f]"></div>
+<div class="flex flex-col items-center">
+<span class="text-white font-bold text-2xl">100%</span>
+<span class="text-[#9db8a8] text-xs">qualité garantie</span>
+</div>
+</div>
+</section>
+<section class="flex flex-wrap gap-3 sticky top-[80px] z-30 py-4 bg-background-dark/95 backdrop-blur-sm -mx-4 px-4 md:mx-0 md:px-0">
+<button class="h-10 px-6 rounded-full bg-primary text-background-dark text-sm font-bold shadow-[0_0_15px_rgba(48,232,122,0.3)] transition-all hover:scale-105">
+                    Tous
+                </button>
+<button class="h-10 px-6 rounded-full bg-[#29382f] border border-[#29382f] hover:border-[#9db8a8]/50 text-white text-sm font-medium transition-all hover:bg-[#1a2c22]">
+                    Granit de luxe
+                </button>
+<button class="h-10 px-6 rounded-full bg-[#29382f] border border-[#29382f] hover:border-[#9db8a8]/50 text-white text-sm font-medium transition-all hover:bg-[#1a2c22]">
+                    Granit d'occasion
+                </button>
+<button class="h-10 px-6 rounded-full bg-[#29382f] border border-[#29382f] hover:border-[#9db8a8]/50 text-white text-sm font-medium transition-all hover:bg-[#1a2c22]">
+                    Cuisines
+                </button>
+<button class="h-10 px-6 rounded-full bg-[#29382f] border border-[#29382f] hover:border-[#9db8a8]/50 text-white text-sm font-medium transition-all hover:bg-[#1a2c22]">
+                    Sols
+                </button>
+<button class="h-10 px-6 rounded-full bg-[#29382f] border border-[#29382f] hover:border-[#9db8a8]/50 text-white text-sm font-medium transition-all hover:bg-[#1a2c22]">
+                    Escaliers
+                </button>
+<div class="ml-auto hidden md:flex bg-[#29382f] rounded-full p-1">
+<button class="p-2 rounded-full bg-background-dark text-white shadow-sm">
+<span class="material-symbols-outlined text-sm">grid_view</span>
+</button>
+<button class="p-2 rounded-full text-[#9db8a8] hover:text-white">
+<span class="material-symbols-outlined text-sm">view_list</span>
+</button>
+</div>
+</section>
+<section class="masonry-grid w-full">
+<div class="masonry-item relative group rounded-2xl overflow-hidden bg-[#1a2c22]">
+<div class="aspect-[3/4] w-full overflow-hidden">
+<img alt="Black marble texture with white veins close up" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="Black marble texture with white veins close up" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDiy8NCTXdMvpE8RMSAZqHWYPBRF973kU6NJmQJaGsZjYcii9-ijzzmid_AGi5jlS_Lns91cvKzFw7a0qc3eVUi7-vTBVLA7kRYdoj4-zgoZgYwvdqujigBFENJDKfEbtds5cXZlRJZjOJbT4AXtcnSl9e_rO5B_0bhhlqhS2y7gOFNFm1si_zHoQl1Xh_tfzRwdQjfqH6VOVJt2xFG8iVWNfodSXO5j8n5RmmRQtyBXE-sp5y1MyVFn31VBJCN3JmweyYjcAwNpnQ"/>
+</div>
+<div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center backdrop-blur-[2px]">
+<button class="size-14 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white flex items-center justify-center hover:bg-primary hover:border-primary hover:text-background-dark transition-all transform hover:scale-110">
+<span class="material-symbols-outlined">zoom_in</span>
+</button>
+</div>
+<div class="absolute bottom-0 left-0 right-0 p-5 bg-gradient-to-t from-black/90 via-black/60 to-transparent translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+<div class="flex justify-between items-end">
+<div>
+<h3 class="text-white text-xl font-bold mb-1">Galaxy Noir</h3>
+<p class="text-[#9db8a8] text-sm">Importé - Italie</p>
+</div>
+<span class="px-3 py-1 rounded-full bg-primary/20 text-primary text-xs font-bold border border-primary/20 backdrop-blur-sm">Luxe</span>
+</div>
+</div>
+</div>
+<div class="masonry-item relative group rounded-2xl overflow-hidden bg-[#1a2c22]">
+<div class="aspect-[4/3] w-full overflow-hidden">
+<img alt="Modern kitchen with large white granite island" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="Modern kitchen with large white granite island" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC19JN9cJZSg_NvP__JMP74Gk4p-7Tq26af3wvxGQiFUsD2Ri40AoDkWXFRUADeTVDTZCaZEITBkocZKHrg9BFAzkLVbUPIDQKUaZmCDMx7AP4KXEg5aWxVQZwH94Vv8Efq6efwLa8e1ye3xBM9DVbaQtS3qUQ0Ef9Jo-pCO_nctj5Z0Q1uvaFFSLd0zSjmEYA2Y5K0ugh2gzRLL7YgiasD6eGlKPRf-53ACMCe0rmo5cVI9AoLoXeyGV0FXHaHenyEhpIDhuOIBtM"/>
+</div>
+<div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center backdrop-blur-[2px]">
+<button class="size-14 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white flex items-center justify-center hover:bg-primary hover:border-primary hover:text-background-dark transition-all transform hover:scale-110">
+<span class="material-symbols-outlined">zoom_in</span>
+</button>
+</div>
+<div class="absolute bottom-0 left-0 right-0 p-5 bg-gradient-to-t from-black/90 via-black/60 to-transparent translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+<div class="flex justify-between items-end">
+<div>
+<h3 class="text-white text-lg font-bold mb-1">Bianco Carrara</h3>
+<p class="text-[#9db8a8] text-sm">Cuisines</p>
+</div>
+<span class="px-3 py-1 rounded-full bg-white/10 text-white text-xs font-bold border border-white/10 backdrop-blur-sm">Disponible</span>
+</div>
+</div>
+</div>
+<div class="masonry-item relative group rounded-2xl overflow-hidden bg-[#1a2c22]">
+<div class="aspect-[9/16] w-full overflow-hidden">
+<img alt="Close up of beige travertine stone texture" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="Close up of beige travertine stone texture" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBVUqGzB5xNPOAKaP_8R-FPehyDyz3zdUp78XTsjtaTOKylFBJfplKI8LZZd1bm2BzWGgJN1BzMRSKd-kCNb5ic6hW0MFkcDPS_9XUwYYlbuUQ-qZjQtxuO8yAxN8wClUdC2SJoQcMaBphGovfsJ2Mp9Dshw91pRw-sKACJXf26ZIfloojefs6a-eaur8rEieScedRzaVTq5HSgCdNs51GWZwaUQsyGaI3zjByuNLhuV0eWBIgEa4PM3LSoBBnGU_rqiatCWjj8yvo"/>
+</div>
+<div class="absolute top-4 left-4 z-10">
+<span class="px-3 py-1 rounded-full bg-[#E5B80B]/20 text-[#E5B80B] text-xs font-bold border border-[#E5B80B]/30 backdrop-blur-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">star</span>
+                            Offre spéciale
+                         </span>
+</div>
+<div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center backdrop-blur-[2px]">
+<button class="size-14 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white flex items-center justify-center hover:bg-primary hover:border-primary hover:text-background-dark transition-all transform hover:scale-110">
+<span class="material-symbols-outlined">zoom_in</span>
+</button>
+</div>
+<div class="absolute bottom-0 left-0 right-0 p-5 bg-gradient-to-t from-black/90 via-black/60 to-transparent translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+<div class="flex justify-between items-end">
+<div>
+<h3 class="text-white text-xl font-bold mb-1">Travertin Beige</h3>
+<p class="text-[#9db8a8] text-sm">Sols et façades</p>
+</div>
+</div>
+</div>
+</div>
+<div class="masonry-item relative group rounded-2xl overflow-hidden bg-[#1a2c22]">
+<div class="aspect-square w-full overflow-hidden">
+<img alt="Dark green serpentine marble texture" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="Dark green serpentine marble texture" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAHCz7HJ3H4rRklBvmh8xqgcs39nguzi1S6Fo1sjYMim7DIupOY-y236TpomQOjlgeCzgiKpOS7_0vxMt9OdtHqT4JTsswrJKM6BofH3blTSG3ApnJ3-YtMgpAms50L1uTQESrEWqIKH1xv15hHtbf1TsiF313xGL4zvPun31cfVi8jSXTc_iTxdInrI_t96ORNzaWpgCshcB4hTO0g3JEO3Kmbd2yICo8A-Q0kR1ETqF-WZB50bC3_FiP6fOrbST_JC3ZUcq7xaVw"/>
+</div>
+<div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center backdrop-blur-[2px]">
+<button class="size-14 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white flex items-center justify-center hover:bg-primary hover:border-primary hover:text-background-dark transition-all transform hover:scale-110">
+<span class="material-symbols-outlined">zoom_in</span>
+</button>
+</div>
+<div class="absolute bottom-0 left-0 right-0 p-5 bg-gradient-to-t from-black/90 via-black/60 to-transparent translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+<div class="flex justify-between items-end">
+<div>
+<h3 class="text-white text-lg font-bold mb-1">Vert Impérial</h3>
+<p class="text-[#9db8a8] text-sm">Rare</p>
+</div>
+<span class="px-3 py-1 rounded-full bg-primary/20 text-primary text-xs font-bold border border-primary/20 backdrop-blur-sm">Luxe</span>
+</div>
+</div>
+</div>
+<div class="masonry-item relative group rounded-2xl overflow-hidden bg-[#1a2c22]">
+<div class="aspect-[3/4] w-full overflow-hidden">
+<img alt="Red granite texture surface" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="Red granite texture surface" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAVhwoX8it-10wItLRxw6iBVpxEFEEyPyGK3lraWOTmBriugWXDIVolcwc6tnW4VamEoOKiTYxPjLyc4YN9q9TbIVUTQYQVgFQQ6ylih17uJH1zYXC4L9Q3tHaaxUcjHvJ_ULyyzmeJRPziS6cC_pXZzfhlEyR7hx27p3WW6prtMxk77zjbRNZBURiO2cwuaaLeJsUwfYUZwSkQpcWJaTQ6YAF4Pbq2pRNjPtntMgyk62UdTkHobwKRm4Sxg2ep7vncUhlmt_6rSeM"/>
+</div>
+<div class="absolute top-4 left-4 z-10">
+<span class="px-3 py-1 rounded-full bg-white/10 text-white text-xs font-bold border border-white/10 backdrop-blur-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">recycling</span>
+                            Occasion
+                         </span>
+</div>
+<div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center backdrop-blur-[2px]">
+<button class="size-14 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white flex items-center justify-center hover:bg-primary hover:border-primary hover:text-background-dark transition-all transform hover:scale-110">
+<span class="material-symbols-outlined">zoom_in</span>
+</button>
+</div>
+<div class="absolute bottom-0 left-0 right-0 p-5 bg-gradient-to-t from-black/90 via-black/60 to-transparent translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+<div class="flex justify-between items-end">
+<div>
+<h3 class="text-white text-xl font-bold mb-1">Rouge Rubis</h3>
+<p class="text-[#9db8a8] text-sm">Grandes plaques</p>
+</div>
+</div>
+</div>
+</div>
+<div class="masonry-item relative group rounded-2xl overflow-hidden bg-[#1a2c22]">
+<div class="aspect-[4/3] w-full overflow-hidden">
+<img alt="Granite stairs with modern railing" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="Granite stairs with modern railing" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCiXoiFhK-hDTDNMsGbm_z8_lpjnqx81qoVs9Gkj7Ujg8ni0pHWGl_Y7In38Z9gnRMJpbl7CroHIT2-JHU87DDLR0s3DSfKYazSaom_iHu0xDc0bAazMa8qSsYoeblFCWROFFotifzkRkCEBnNybXR0Cu6-FfD18gD3Ca6Hj5kJiNxiG1vNIc2nIGbFYrOrbANv5fsq81QrWQ8ddgoJ2giN8gj_-mgUjbR0rVltOhjsdt1Oduz1f60weS0z03ug3lKcuj5SaI6xcoQ"/>
+</div>
+<div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center backdrop-blur-[2px]">
+<button class="size-14 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white flex items-center justify-center hover:bg-primary hover:border-primary hover:text-background-dark transition-all transform hover:scale-110">
+<span class="material-symbols-outlined">zoom_in</span>
+</button>
+</div>
+<div class="absolute bottom-0 left-0 right-0 p-5 bg-gradient-to-t from-black/90 via-black/60 to-transparent translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+<div class="flex justify-between items-end">
+<div>
+<h3 class="text-white text-lg font-bold mb-1">Gris Espagnol</h3>
+<p class="text-[#9db8a8] text-sm">Escaliers et rotondes</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+</main>
+<div class="fixed bottom-8 right-8 z-40 hidden md:block">
+<button class="group flex items-center gap-3 h-14 pl-2 pr-6 bg-primary hover:bg-[#25b560] text-background-dark rounded-full shadow-[0_4px_20px_rgba(48,232,122,0.4)] transition-all hover:-translate-y-1">
+<span class="size-10 bg-black/10 rounded-full flex items-center justify-center group-hover:bg-black/20 transition-colors">
+<span class="material-symbols-outlined">chat</span>
+</span>
+<div class="flex flex-col items-start">
+<span class="text-sm font-bold leading-none mb-1">Demander un devis</span>
+<span class="text-[10px] font-medium opacity-80 leading-none">Réponse sous 24h</span>
+</div>
+</button>
+</div>
+<div class="md:hidden fixed bottom-0 left-0 right-0 bg-[#29382f]/90 backdrop-blur-lg border-t border-[#3d5244] p-4 z-40 flex justify-between items-center">
+<div class="flex flex-col">
+<span class="text-white text-sm font-bold">Avez-vous trouvé ce que vous cherchez?</span>
+<span class="text-[#9db8a8] text-xs">Contactez-nous maintenant</span>
+</div>
+<button class="bg-primary text-background-dark h-10 px-6 rounded-full text-sm font-bold">
+            Contactez-nous
+         </button>
+</div>
+<footer class="bg-[#0b1610] border-t border-[#1a2c22] pt-16 pb-24 md:pb-16 px-4 md:px-10 lg:px-20">
+<div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between gap-10">
+<div class="flex flex-col gap-4 max-w-sm">
+<div class="flex items-center gap-2 text-white">
+<span class="material-symbols-outlined text-primary">diamond</span>
+<h2 class="text-xl font-bold">andaloussia<span class="text-primary">marbre</span></h2>
+</div>
+<p class="text-[#9db8a8] text-sm leading-relaxed">
+                    Nous offrons les types de granit et de marbre les plus luxueux à des prix compétitifs. Spécialistes des rotondes, cuisines et sols de luxe.
+                </p>
+</div>
+<div class="flex flex-wrap gap-12">
+<div class="flex flex-col gap-4">
+<h3 class="text-white font-bold">Liens rapides</h3>
+<a class="text-[#9db8a8] hover:text-primary text-sm transition-colors" href="#">Accueil</a>
+<a class="text-[#9db8a8] hover:text-primary text-sm transition-colors" href="#">Galerie</a>
+<a class="text-[#9db8a8] hover:text-primary text-sm transition-colors" href="#">Qui sommes-nous</a>
+<a class="text-[#9db8a8] hover:text-primary text-sm transition-colors" href="#">Contact</a>
+</div>
+<div class="flex flex-col gap-4">
+<h3 class="text-white font-bold">Contactez-nous</h3>
+<div class="flex items-center gap-2 text-[#9db8a8] text-sm">
+<span class="material-symbols-outlined text-sm">location_on</span>
+                        Casablanca, Maroc
+                    </div>
+<div class="flex items-center gap-2 text-[#9db8a8] text-sm">
+<span class="material-symbols-outlined text-sm">call</span>
+                        +212 522 000 000
+                    </div>
+<div class="flex items-center gap-2 text-[#9db8a8] text-sm">
+<span class="material-symbols-outlined text-sm">mail</span>
+                        info@andaloussiamarbre.ma
+                    </div>
+</div>
+</div>
+</div>
+<div class="max-w-7xl mx-auto mt-12 pt-8 border-t border-[#1a2c22] flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-[#5c6e62]">
+<p>© 2024 Andaloussia Marbre. Tous droits réservés.</p>
+<div class="flex gap-4">
+<a class="hover:text-white transition-colors" href="#">Politique de confidentialité</a>
+<a class="hover:text-white transition-colors" href="#">Conditions d'utilisation</a>
+</div>
+</div>
+</footer>
+<script>
+const menuBtn = document.getElementById('menu-btn');
+const mobileMenu = document.getElementById('mobile-menu');
+const navLinks = mobileMenu.querySelectorAll('a');
+const body = document.body;
+
+menuBtn.addEventListener('click', () => {
+  mobileMenu.classList.toggle('hidden');
+  if (mobileMenu.classList.contains('hidden')) {
+    body.style.overflow = 'auto';
+  } else {
+    body.style.overflow = 'hidden';
+  }
+});
+
+navLinks.forEach(link => {
+  link.addEventListener('click', () => {
+    mobileMenu.classList.add('hidden');
+    body.style.overflow = 'auto';
+  });
+});
+</script>
+</script>
+</body></html>
